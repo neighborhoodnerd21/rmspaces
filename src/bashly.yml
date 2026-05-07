@@ -1,0 +1,23 @@
+name: rmspaces
+help: Remove spaces in filenames or replace them with alternative characters
+version: "0.1.0"
+
+args:
+  - name: source
+    help: "File to rename"
+
+flags:
+  - long: --dash
+    short: -d
+    help: Replace whitespace with dashes
+  - long: --underscore
+    short: -u
+    help: Replace whitespace with hyphens
+  - long: --period
+    short: -p
+    help: Replace whitespace with periods
+
+examples:
+  - nospace "file\ name.txt" #output: file-name.txt
+  - nospace -u "file\ name.txt" #output: file_name.txt
+  - nospace -d "file\ name.txt" #output: file.name.txt
